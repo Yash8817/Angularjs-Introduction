@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+        <script type="text/javascript">
+            /*
+                1. Include angular.min.js above
+                2. Create a module
+                3. Attach a controller to the module
+                4. Write a module inside controller
+                5. Create template in html
+                6. Intiantiate person controller
+                7. default funcion() gets called while controller instantiation
+                8. Use the view to print name
+                9. This is one way data binding
+                10. Controllers can be nested
+            */
+            var handle = angular.module('myapp',[]);
+
+            handle.controller("brand",function(){
+                this.brandname="Nike";
+            });
+
+            handle.controller("person", function(){                
+                this.name = "ratan";                
+            });
+            
+            handle.controller("profile", function(){
+                this.club = "Platinum";
+            });
+        </script>
+    </head>
+    <body ng-app="myapp">
+        <div ng-controller="brand as b">
+            The brand is {{b.brandname}}
+        </div>
+        <div ng-controller="person as p">
+            Hello {{p.name}}            
+        </div>
+        
+        <div ng-controller="profile as prf">
+            You are {{prf.club}} member
+        </div>
+    </body>
+</html>
+

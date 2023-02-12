@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+        <script type="text/javascript" src="script.js"></script>
+    </head>
+    <body ng-app="myapp">
+        <div ng-controller="form">
+            <h1>Data binding of various Form Elements</h1>
+            Input type Text  : <input type="text" ng-model="text"> : <span class="redfont">{{text}}</span>
+            <br><br>
+            Select control :  
+           
+                <select ng-options="option.name for option in selectdata.aryCity track by option.id"
+                        ng-model="selectdata.selectedOption"></select>
+                : <span class="redfont">{{selectdata.selectedOption.name}}</span>
+            <br><br>
+            Input type Checkbox : <br>
+            Do you own a Jet? <input type="checkbox" ng-model="flag1"> : {{flag1}}
+            <br><br>
+
+            Input type radio : <br>
+                <input type="radio" ng-model="color" value="Green"> Green <br>
+                <input type="radio" ng-model="color" value="Blue"> Blue <br>
+                <input type="radio" ng-model="color" value="Black"> Black <br>
+                <br>
+            : {{color}}
+
+            <br><br>
+
+
+
+        </div>
+    </body>
+    <style>
+        .redfont{
+            color:red;
+        }
+    </style>
+</html>

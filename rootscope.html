@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+        <script type="text/javascript">
+            // $rootScope the common scope for all controllers
+            // $rootScope is mapped with ng-app="myapp" initialization
+            
+            var app = angular.module('myapp',[]).run(["$rootScope", function(rs){
+                rs.ecomstore = "Flipkart";
+                console.log("I am in rootscope");
+            }]);
+            
+            app.controller("brand", ["$scope",function(b){                
+                b.brandid = 1;                
+                b.brandname = "Tata";            
+                console.log("I am in brand");
+            }]);
+
+            app.controller("product", ["$scope",function(p){
+                p.productid = 10;                
+                p.displayname = "Nano eCar";
+                console.log("I am in product");
+                p.getProductInfo = function(){
+                    var pinfo = this.displayname + ' having productid = ' + this.productid + 
+                    ' of brand ' + this.brandname + ' having brand id ' + this.brandid + 
+                    ' being sold at ' + this.ecomstore;                    
+                    return pinfo;
+                }
+            }]);            
+        </script>
+    </head>
+    <body ng-app="myapp">
+        <div ng-controller="brand">            
+            <div ng-controller="product">
+                <h3>{{getProductInfo()}}</h3>
+            </div>
+        </div>
+    </body>
+</html>

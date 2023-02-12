@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+        <script type="text/javascript">
+            var handle = angular.module('myapp',[]);
+            //variable name $scope can not be changed
+            handle.controller("person", function($scope){                
+                $scope.name = "ratan";                
+            });
+        </script>
+    </head>
+    <body ng-app="myapp">
+        <div ng-controller="person">
+            Hello {{name}}            
+        </div>
+    </body>
+</html>

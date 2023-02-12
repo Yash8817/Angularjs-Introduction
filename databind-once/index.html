@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+        <script type="text/javascript" src="script.js"></script>
+    </head>
+    <body ng-app="myapp">
+        <div ng-controller="clock">
+            <h1>Example of one time data binding</h1>
+            <h3>Date & Time is </h3> 
+            <span>{{timestr}}</span>            
+            <br>
+            <hr>
+            <h3>Date & Time is </h3> 
+            <span>{{::timestr}}</span>                        
+            <br><hr>
+            <button ng-click="getTimeSTring()">Get Latest Date Time</button>
+        </div>
+    </body>
+</html>

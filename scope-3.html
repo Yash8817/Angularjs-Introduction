@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+        <script type="text/javascript">
+            var app = angular.module('myapp',[]);
+
+            //product controller accessing brandid
+            app.controller("brand", ["$scope",function(b){                
+                b.brandid = 1;                
+                b.brandname = "Tata";                
+            }]);
+
+            app.controller("product", ["$scope",function(p){
+                p.productid = 10;                               
+                p.displayname = "Nano eCar";
+                p.getProductInfo = function(){
+                    var pinfo = this.displayname + ' having productid = ' + this.productid + ' of brand ' +
+                     this.brandname + ' having brand id ' + this.brandid;
+                    return pinfo;
+                }
+            }]);
+
+            
+        </script>
+    </head>
+    <body ng-app="myapp">
+        <div ng-controller="brand">            
+            <div ng-controller="product">
+                <h3>{{getProductInfo()}}</h3>
+            </div>
+        </div>       
+    </body>
+</html>

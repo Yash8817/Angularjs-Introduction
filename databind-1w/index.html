@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+        <script type="text/javascript" src="script.js"></script>
+    </head>
+    <body ng-app="myapp">
+        <div ng-controller="person">
+            <h1>Example of one way data binding</h1>
+            <h3>Hello</h3> 
+            <span>{{fname}}</span>
+            <span>{{lname}}</span>          
+            <br>
+            <hr>
+            <h3>Hello </h3> 
+            <span ng-bind="fname"></span>
+            <span ng-bind="lname"></span>
+            <br><hr>
+        </div>
+    </body>
+</html>

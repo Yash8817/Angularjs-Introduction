@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+        <script type="text/javascript">
+            var app = angular.module('myapp',[]);
+            // Add methods inside controller
+            app.controller("person", ["$scope",function(c){                
+                c.fname = "Ratan";                
+                c.lname = "Tata";
+                c.getFullname = function(){
+                    return this.fname + ' ' + this.lname;
+                }
+            }]);
+        </script>
+    </head>
+    <body ng-app="myapp">
+        <div ng-controller="person">
+            Hello FIrst name : {{fname}} Last name : {{lname}}<br><br>
+            Hello {{getFullname()}}
+        </div>
+    </body>
+</html>

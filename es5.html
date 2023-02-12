@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+    <body>
+        <h2>Get Started with Javascript ES5</h2>
+        <p>Tune your mind to client side scripting</p>
+        <p>If you happen to modify this file and are not getting desired output, then open console log by pressing CTRL + I or right click & inspect. Check if there is any syntax error for javascript.</p>
+        <hr>
+
+        <h3>Array filter</h3>
+        <p id="arrayFilter"></p>
+        <script>            
+            var numbers = [45, 64, 89, 76, 95];
+            var good_score = numbers.filter(myFunction);
+
+            document.getElementById("arrayFilter").innerHTML = good_score;
+
+            function myFunction(value, index, array) {
+                console.log(' Value = '+ value + ' index = ' + index + ' array = ' + array);
+                return value > 70;
+            }
+        </script>
+        <hr>
+
+        <h3>Loop in Array</h3>
+        <p id="arrayForeach"></p>
+        <script>
+            var txt = "";
+            var numbers = [45, 14, 92, 136, 125];
+            numbers.forEach(myFunction);
+
+            document.getElementById("arrayForeach").innerHTML = txt;
+            
+            function myFunction(value) {
+              txt = txt + value + "<br>"; 
+            }
+        </script>
+        <hr>
+
+        <h3>Array Map</h3>
+        <p id="arrayMap"></p>
+        <script>
+            var numbers1 = [45, 14, 92, 136, 125];
+            var numbers2 = numbers1.map(myFunction);    // creates a new array by performing a function on each array element
+            
+            document.getElementById("arrayMap").innerHTML = numbers2;
+            
+            function myFunction(value, index, array) {
+              return value + 10;
+            }
+        </script>
+        <hr>
+        
+        <h3>String</h3>
+        <p id="stringAt"></p>
+        <script>
+            var str = 'Hello World';
+            var ch = str.charAt(1);
+
+            document.getElementById("stringAt").innerHTML = ch;          
+        </script>
+        <hr>
+        
+        <h3>JSON Parse</h3>
+        <p id="jsonParse"></p>
+        <script>
+            const person = '{"name":"Ratan", "age":90, "city":"Mumbai"}';
+            const obj = JSON.parse(person);
+            document.getElementById("jsonParse").innerHTML = obj.name + ", " + obj.age;
+        </script>
+        <hr>
+
+        <h3>Date</h3>
+        <p id="date"></p>
+        <p id="datetostr"></p>
+        <script>           
+            document.getElementById("date").innerHTML = Date.now();
+
+            const d = new Date();
+            document.getElementById("datetostr").innerHTML = d.toISOString();
+        </script>
+        <hr>
+
+        <h3>Set & Get</h3>
+        <p id="result"></p>
+        <script>
+            var ceo = {
+                firstName: "Ratan",
+                age : 90,
+                company : "",
+                get business() {
+                    return this.company;
+                },
+                set business(value) {
+                    this.company = value;
+                }
+            };
+
+            ceo.business='Tata Motors';
+            document.getElementById("result").innerHTML = ceo.business;
+        </script>
+        <hr>
+
+        
+    </body>
+</html>
